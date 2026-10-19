@@ -1,0 +1,2 @@
+quote_id,executed_at_utc,source_currency,target_currency,total_spent,fee_included,received_amount,simulation_provider,fx_mode,status
+2ec48864c897fbd8eb26b6394c092c33,2026-10-19 18:32:26.961257,USD,CNY,50.00,0.40,329.31,Value,live,Sandbox completed — no real money moved

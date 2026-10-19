@@ -1,0 +1,23 @@
+StudentBridge evidence compilation
+Compilation time: 2026-10-19T19:56:27.253567+00:00
+pytest: 227 passed in 28.16 seconds; exit code 0
+Tested Git HEAD: 8cde4e49ca5e6f76f513d6e5de351073bf67ec0f
+Original hosted check time: 2026-10-19T16:23:16.219157+00:00
+Quote: 2ec48864c897fbd8eb26b6394c092c33
+Stored CSV rows: one transfer, one matching completion audit event
+No network calls, new tests or credential reads were performed.
+
+Input hashes:
+107d68605dea9481c959c412125acc47752d03836879cc019cb78260c2de79af  docs\submission\evidence\logs\pytest_final.txt
+32007c509ba81504be5c3eeba1dc6f7599488281e673d23a84cf1b90e80bd63f  docs\submission\evidence\logs\pytest_metadata.txt
+b19ffc58d042d45d79abe4ccab4d7280830fc29cbe894195ba754423dc2a7ec8  docs\submission\evidence\logs\hosted_security_sanitized.json
+d5c204ae3852e94bd0c043907431142c1561598899e1c06e5753f44ce8fe779c  docs\submission\evidence\logs\transfer_execution.csv
+da673add5c2f34159cdea300154ab21999fff88b2a10270f24408e88ce639979  docs\submission\evidence\logs\transfer_audit.csv
+
+Updated files:
+docs\submission\TECHNICAL_DOCUMENTATION.md
+docs\submission\SECURITY_SELF_ASSESSMENT.md
+docs\submission\EVIDENCE_INDEX.csv
+docs\submission\TEST_RUN_RECORD.csv
+docs\submission\TEST_CASES.csv
+docs\submission\EVIDENCE_STATUS.md

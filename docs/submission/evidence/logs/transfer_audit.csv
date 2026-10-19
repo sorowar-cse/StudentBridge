@@ -1,0 +1,2 @@
+seq,event,event_time_utc,quote_id,total_spent,received_amount,audit_digest
+9,sandbox_transfer_completed,2026-10-19 18:32:26.974515,2ec48864c897fbd8eb26b6394c092c33,50.00,329.31,4d43a03d194757023812ffaea827078f65abd808f4f064b7d7b4058e89ec532e

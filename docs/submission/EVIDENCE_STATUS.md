@@ -1,18 +1,19 @@
 # StudentBridge evidence status
 
-Documentation updated 20 October 2026. Exact run timestamps must come from the original files.
+This register compiles saved logs and owner-confirmed UI outcomes. It does not execute new tests.
 
-| Record | Existing observation | Remaining artifact |
-|---|---|---|
-| Current local automated suite | 227 passed in 30.25 seconds after UI and team updates | Owner current-code log and reviewed commit |
-| Owner earlier corrected suite | 227 passed in 23.03 seconds, console supplied | Reviewed sanitized owner_pytest_run.txt |
-| Owner offline regression | 366/366, zero calls, authored synthetic data | owner_offline_run.txt and matching summary/CSV |
-| Owner actual Supabase check | All six checks passed, console supplied | Reviewed cloud_security_private.json copied under a sanitized public filename |
-| Owner Groq diagnostic | Four HTTP 200/schema passes | Reviewed synthetic diagnostic console recording/file |
-| Owner doctor check | Configuration/Auth/FX/catalogue checks passed | owner_connection_check.txt |
-| Deployed acceptance | Owner reports login, saved profile, assistant, conversion, forecast, PDF, language/UI and member details OK | SS01 to SS06 as applicable and actual video |
-| Deployed replay | No specific balance/receipt recording supplied | Same quote, same receipt, unchanged balances on retry |
-| Explicit reboot persistence | Profile visible online, no reboot record supplied | Reboot, relogin and same profile capture |
-| Concurrent load | No result supplied | Future work, not a submission success claim |
+| Record | Result | Evidence | Attachment state |
+|---|---|---|---|
+| E01 | 227 passed in 28.16 seconds; exit code 0 | evidence/logs/pytest_final.txt; evidence/logs/pytest_metadata.txt | Attached |
+| E03 | Six saved checks passed | evidence/logs/hosted_security_sanitized.json | Attached |
+| E08 | Owner confirms profile, forecast, conversion and AI working | evidence/screenshots/SS01_profile.png; evidence/screenshots/SS02_forecast.png; evidence/screenshots/SS03_currency.png; evidence/screenshots/SS08_ai_conversion.png; evidence/screenshots/SS08_ai_forecast.png | Attached |
+| E09 | One stored execution and audit event; owner confirms replay without second debit | evidence/logs/transfer_execution.csv; evidence/logs/transfer_audit.csv; evidence/screenshots/SS05_replay.png; evidence/screenshots/SS05_wallet_after_replay.png; evidence/pdfs/StudentBridge_Receipt.pdf | Attached |
+| E10 | Owner confirms profile and wallet persisted; forecast reproduced | evidence/screenshots/SS07_profile_after_reboot.png; evidence/screenshots/SS07_wallet_after_reboot.png | Attached |
+| E11 | Saved six-check result displayed | evidence/screenshots/SS06_security.png; evidence/logs/hosted_security_sanitized.json | Attached |
+| E12 | Video remains pending until actually recorded and reviewed | StudentBridge_demo.mp4 or accessible link | Pending |
 
-The submission pack's E_Evidence_Guide folder includes labelled console transcriptions and historical v4 raw development logs. Transcriptions are not original machine log files. Preserve failures, dates and scope. A blank row in TEST_RUN_RECORD is a new capture template, not a denial of the earlier observed results. Complete each current-revision row only after observing that case.
+Earlier evidence retains its original dates and scope: the earlier owner suite reported 227 tests in 23.03 seconds; offline regression reported 366/366 with zero LLM calls; four Groq synthetic probes were reported separately; the 23 isolated SQL checks are historical development evidence.
+
+The ten completed acceptance records are TC02, TC06, TC07, TC09, TC11, TC17, TC23, TC24, TC28 and TC29. Other rows retain their existing status. Targeted hosted role/expiry/tamper/limit tests, concurrent load and network races have no new passing result here.
+
+Exact pytest/checker/initial-execution timestamps come from their saved artifacts. Exact manual replay/reboot times were not recorded and are not invented. The UI rows identify the owner's reviewed code baseline; pytest_metadata.txt identifies the actual Git HEAD tested.

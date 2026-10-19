@@ -1,32 +1,32 @@
-﻿Case_ID,Run_at_with_timezone,Reviewed_commit,Environment,Observed_result,Pass_Fail_Pending,Evidence_path,Issue_or_note
+Case_ID,Run_at_with_timezone,Reviewed_commit,Environment,Observed_result,Pass_Fail_Pending,Evidence_path,Issue_or_note
 TC01,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC02,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
+TC02,Owner confirmed 2026-10-20 UTC+08:00; exact UI execution time not recorded,ca161fbfdee8ef9594a577e767d1e7e0836fe242,Hosted application - owner observation / saved SQL export,Owner confirms successful login,Pass,evidence/screenshots/SS01_profile.png,Attached. Owner-provided code baseline; hosting build SHA not independently captured.
 TC03,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC04,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC05,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC06,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC07,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
+TC06,2026-10-19T16:23:16.219157+00:00,Original checker revision not recorded,Hosted Supabase REST - saved checker result,Saved checker: B cannot read A profile through REST,Pass,evidence/logs/hosted_security_sanitized.json,Attached. No new checker run.
+TC07,2026-10-19T16:23:16.219157+00:00,Original checker revision not recorded,Hosted Supabase REST - saved checker result,Saved checker: direct role update denied,Pass,evidence/logs/hosted_security_sanitized.json,Attached. No new checker run.
 TC08,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC09,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
+TC09,Owner confirmed 2026-10-20 UTC+08:00; exact UI execution time not recorded,ca161fbfdee8ef9594a577e767d1e7e0836fe242,Hosted application - owner observation / saved SQL export,Owner confirms profile/wallet persisted after reboot and relogin,Pass,evidence/screenshots/SS07_profile_after_reboot.png; evidence/screenshots/SS07_wallet_after_reboot.png,Attached. Owner-provided code baseline; hosting build SHA not independently captured.
 TC10,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC11,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
+TC11,Owner confirmed 2026-10-20 UTC+08:00; exact UI execution time not recorded,ca161fbfdee8ef9594a577e767d1e7e0836fe242,Hosted application - owner observation / saved SQL export,Owner confirms cost18480/resources24000/gap0/timing4580 MYR,Pass,evidence/screenshots/SS02_forecast.png; evidence/pdfs/StudentBridge_Forecast.pdf,Attached. Owner-provided code baseline; hosting build SHA not independently captured.
 TC12,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC13,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC14,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC15,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC16,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC17,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
+TC17,Owner confirmed 2026-10-20 UTC+08:00; exact UI execution time not recorded,ca161fbfdee8ef9594a577e767d1e7e0836fe242,Hosted application - owner observation / saved SQL export,Owner confirms live Groq conversion and forecast review working after resolving 401,Pass,evidence/screenshots/SS08_ai_conversion.png; evidence/screenshots/SS08_ai_forecast.png,Attached. Owner-provided code baseline; hosting build SHA not independently captured.
 TC18,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC19,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC20,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC21,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC22,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC23,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC24,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
+TC23,2026-10-19 18:32:26.961257 UTC,ca161fbfdee8ef9594a577e767d1e7e0836fe242,Hosted application - owner observation / saved SQL export,One matching stored transfer and completion audit event,Pass,evidence/logs/transfer_execution.csv; evidence/logs/transfer_audit.csv; evidence/pdfs/StudentBridge_Receipt.pdf,Attached. Owner-provided code baseline; hosting build SHA not independently captured.
+TC24,Owner confirmed 2026-10-20 UTC+08:00; exact UI execution time not recorded,ca161fbfdee8ef9594a577e767d1e7e0836fe242,Hosted application - owner observation / saved SQL export,Owner confirms same receipt on replay; USD50.00/CNY329.31 unchanged,Pass,evidence/screenshots/SS05_replay.png; evidence/screenshots/SS05_wallet_after_replay.png,Attached. Owner-provided code baseline; hosting build SHA not independently captured.
 TC25,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC26,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC27,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC28,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
-TC29,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
+TC28,Owner confirmed 2026-10-20 UTC+08:00; exact UI execution time not recorded,ca161fbfdee8ef9594a577e767d1e7e0836fe242,Hosted application - owner observation / saved SQL export,Owner confirms downloaded PDF documents opened and were checked,Pass,evidence/pdfs/StudentBridge_Forecast.pdf; evidence/pdfs/StudentBridge_Receipt.pdf,Attached. Owner-provided code baseline; hosting build SHA not independently captured.
+TC29,2026-10-19T16:23:16.219157+00:00,Original checker revision not recorded,Hosted Supabase REST - saved checker result,Saved checker: deleting B profile leaves A untouched,Pass,evidence/logs/hosted_security_sanitized.json,Attached. No new checker run.
 TC30,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports
 TC31,,,,,Pending,,Current-revision capture template; see EVIDENCE_STATUS for existing reports

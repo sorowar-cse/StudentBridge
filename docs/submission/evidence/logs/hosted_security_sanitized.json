@@ -1,0 +1,31 @@
+﻿{
+    "checked_at":  "2026-10-19T16:23:16.219157+00:00",
+    "scope":  "YOUR hosted Supabase, synthetic dedicated accounts",
+    "checks":  [
+                   {
+                       "name":  "Own profile round trip and AES authentication",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "B cannot SELECT A profile through the actual REST API",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Direct role update denied by database grants",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Anonymous document access denied",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "B deletion does not affect A",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "Both per-user audit chains verify",
+                       "passed":  true
+                   }
+               ],
+    "evidence_note":  "Extracted from a previously saved hosted security run."
+}
