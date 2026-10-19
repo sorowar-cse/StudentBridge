@@ -1,0 +1,15 @@
+{
+  "seed": 20261012,
+  "cases": 956,
+  "splits": {
+    "train": 354,
+    "dev": 236,
+    "test": 366
+  },
+  "sha256": "751dbfd9ca06ce2cb92a7bf4e472948d05e1e92ad42cd95629b7edbfe00f01b9",
+  "provenance": "Authored synthetic requests + invented FX teaching snapshot. Not real students, not model-generated evidence.",
+  "split_policy": "Question templates grouped by split. Currency pairs intentionally recur to test unseen phrasings.",
+  "test_exposure": "These generated cases were inspected during debugging; results are regression checks, not a blind generalization estimate.",
+  "privacy": "No real names, bank accounts, passports or credentials.",
+  "limits": "Template-generated sets overestimate coverage of natural language. Add consented, anonymized real requests after project review."
+}

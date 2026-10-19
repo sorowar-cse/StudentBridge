@@ -1,0 +1,29 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> studentbridge-sql-verification@4.0.0 test:sql
+> node tests/sql_security.mjs
+
+PASS 15 accounts enroll; account 16 is rejected
+PASS Re-enrollment is idempotent
+PASS Unconfirmed accounts are rejected
+PASS Anonymous reads and RPC execution are denied
+PASS Private keys and helper functions cannot be accessed
+PASS Own profile is readable; another user sees no rows
+PASS Direct table writes and role escalation are denied
+PASS Quotes need the server signing key
+PASS Cross-account execution cannot read or spend a quote
+PASS Approval and confirmation are both enforced
+PASS Retry returns the receipt with a single debit
+PASS Expiry uses database time
+PASS Risk and per-transfer limit are enforced in SQL
+PASS Daily limit is enforced across different quote IDs
+PASS Frequency limit is enforced at execution
+PASS Viewer and planner permission tiers are enforced
+PASS Insufficient balance rolls back without receipt
+PASS Global AI allowance is bounded across users
+PASS Per-user and global daily AI allowances are enforced
+PASS Audit export is own-account only and detects event changes
+PASS Deleting another account does not affect the owner document
+PASS Schema can be reapplied without deleting user data
+PASS Owner full account deletion cascades profiles and ledger, releasing an enrollment slot
+Completed 23 SQL security checks.

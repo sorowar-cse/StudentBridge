@@ -1,0 +1,16 @@
+id,university,currency,months,expected_total,expected_resources,expected_gap
+P01,Universiti Kebangsaan Malaysia,MYR,6,5200.00,4800.00,400.00
+P02,Universiti Malaya,MYR,12,11819.50,6450.00,5369.50
+P03,Universiti Teknologi Malaysia,MYR,18,16610.00,9700.00,6910.00
+P04,International Islamic University Chittagong,BDT,6,6330.50,6450.00,0.00
+P05,International Islamic University Malaysia,MYR,12,10380.00,9000.00,1380.00
+P06,Tsinghua University,CNY,18,19937.50,13150.00,6787.50
+P07,Peking University,CNY,6,6310.00,8100.00,0.00
+P08,Fudan University,CNY,12,14096.50,11550.00,2546.50
+P09,Zhejiang University,CNY,18,16040.00,16600.00,0.00
+P10,Shanghai Jiao Tong University,CNY,6,7551.50,9750.00,0.00
+P11,Universiti Kebangsaan Malaysia,MYR,12,13850.00,14100.00,0.00
+P12,Universiti Malaya,MYR,18,23270.50,20050.00,3220.50
+P13,Universiti Teknologi Malaysia,MYR,6,7420.00,11400.00,0.00
+P14,International Islamic University Chittagong,BDT,12,16373.50,16650.00,0.00
+P15,International Islamic University Malaysia,MYR,18,22670.00,23500.00,0.00

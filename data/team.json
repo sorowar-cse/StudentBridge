@@ -1,0 +1,32 @@
+{
+  "members": [
+    {
+      "id": "leader",
+      "role": "Team Leader",
+      "name": "Md. Sorowar Mahabub Rabby",
+      "degree": "Master of Science (Research Mode)",
+      "study_status": "Pursuing",
+      "faculty": "Faculty of Engineering & Built Environment (FKAB)",
+      "university": "Universiti Kebangsaan Malaysia (UKM)",
+      "email": "sorowar.cse1@gmail.com",
+      "phone": "+60 17-741 7099",
+      "whatsapp_only": true,
+      "whatsapp_number": "60177417099",
+      "image": "assets/team/leader/profile.png"
+    },
+    {
+      "id": "member2",
+      "role": "Team Member",
+      "name": "Dr. Hasniza bt Hambali",
+      "degree": "PhD",
+      "study_status": "Year 3",
+      "faculty": "Faculty of Engineering & Built Environment (FKAB)",
+      "university": "Universiti Kebangsaan Malaysia (UKM)",
+      "email": "p145746@siswa.ukm.edu.my",
+      "phone": "+60 12-305 5841",
+      "whatsapp_only": false,
+      "whatsapp_number": "",
+      "image": "assets/team/member2/profile.png"
+    }
+  ]
+}

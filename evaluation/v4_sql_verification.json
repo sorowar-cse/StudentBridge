@@ -1,0 +1,98 @@
+{
+  "engine": "PGlite PostgreSQL + pgcrypto",
+  "scope": "Auth claim stub; real PostgreSQL RLS/RPCs, not hosted Supabase/load testing",
+  "checks": [
+    {
+      "name": "15 accounts enroll; account 16 is rejected",
+      "passed": true
+    },
+    {
+      "name": "Re-enrollment is idempotent",
+      "passed": true
+    },
+    {
+      "name": "Unconfirmed accounts are rejected",
+      "passed": true
+    },
+    {
+      "name": "Anonymous reads and RPC execution are denied",
+      "passed": true
+    },
+    {
+      "name": "Private keys and helper functions cannot be accessed",
+      "passed": true
+    },
+    {
+      "name": "Own profile is readable; another user sees no rows",
+      "passed": true
+    },
+    {
+      "name": "Direct table writes and role escalation are denied",
+      "passed": true
+    },
+    {
+      "name": "Quotes need the server signing key",
+      "passed": true
+    },
+    {
+      "name": "Cross-account execution cannot read or spend a quote",
+      "passed": true
+    },
+    {
+      "name": "Approval and confirmation are both enforced",
+      "passed": true
+    },
+    {
+      "name": "Retry returns the receipt with a single debit",
+      "passed": true
+    },
+    {
+      "name": "Expiry uses database time",
+      "passed": true
+    },
+    {
+      "name": "Risk and per-transfer limit are enforced in SQL",
+      "passed": true
+    },
+    {
+      "name": "Daily limit is enforced across different quote IDs",
+      "passed": true
+    },
+    {
+      "name": "Frequency limit is enforced at execution",
+      "passed": true
+    },
+    {
+      "name": "Viewer and planner permission tiers are enforced",
+      "passed": true
+    },
+    {
+      "name": "Insufficient balance rolls back without receipt",
+      "passed": true
+    },
+    {
+      "name": "Global AI allowance is bounded across users",
+      "passed": true
+    },
+    {
+      "name": "Per-user and global daily AI allowances are enforced",
+      "passed": true
+    },
+    {
+      "name": "Audit export is own-account only and detects event changes",
+      "passed": true
+    },
+    {
+      "name": "Deleting another account does not affect the owner document",
+      "passed": true
+    },
+    {
+      "name": "Schema can be reapplied without deleting user data",
+      "passed": true
+    },
+    {
+      "name": "Owner full account deletion cascades profiles and ledger, releasing an enrollment slot",
+      "passed": true
+    }
+  ]
+}

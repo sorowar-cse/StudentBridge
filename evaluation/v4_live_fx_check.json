@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-16T05:32:53.331289+00:00",
+  "provider": "Frankfurter v2",
+  "results": [
+    {
+      "source": "BDT",
+      "target": "CNY",
+      "status": "ok",
+      "reference": {
+        "base": "BDT",
+        "quote": "CNY",
+        "rate": "0.05423",
+        "as_of": "2026-10-16",
+        "source": "Frankfurter v2, blended official reference rates",
+        "mode": "live",
+        "fetched_at": "2026-10-16T05:33:01.998545+00:00"
+      }
+    },
+    {
+      "source": "CNY",
+      "target": "BDT",
+      "status": "ok",
+      "reference": {
+        "base": "CNY",
+        "quote": "BDT",
+        "rate": "18.4408",
+        "as_of": "2026-10-15",
+        "source": "Frankfurter v2, blended official reference rates",
+        "mode": "live",
+        "fetched_at": "2026-10-16T05:33:02.350709+00:00"
+      }
+    },
+    {
+      "source": "MYR",
+      "target": "CNY",
+      "status": "ok",
+      "reference": {
+        "base": "MYR",
+        "quote": "CNY",
+        "rate": "1.638",
+        "as_of": "2026-10-16",
+        "source": "Frankfurter v2, blended official reference rates",
+        "mode": "live",
+        "fetched_at": "2026-10-16T05:33:02.750581+00:00"
+      }
+    },
+    {
+      "source": "CNY",
+      "target": "MYR",
+      "status": "ok",
+      "reference": {
+        "base": "CNY",
+        "quote": "MYR",
+        "rate": "0.6105",
+        "as_of": "2026-10-16",
+        "source": "Frankfurter v2, blended official reference rates",
+        "mode": "live",
+        "fetched_at": "2026-10-16T05:33:03.334470+00:00"
+      }
+    },
+    {
+      "source": "JPY",
+      "target": "CNY",
+      "status": "ok",
+      "reference": {
+        "base": "JPY",
+        "quote": "CNY",
+        "rate": "0.04226",
+        "as_of": "2026-10-16",
+        "source": "Frankfurter v2, blended official reference rates",
+        "mode": "live",
+        "fetched_at": "2026-10-16T05:33:03.878819+00:00"
+      }
+    },
+    {
+      "source": "CNY",
+      "target": "KWD",
+      "status": "ok",
+      "reference": {
+        "base": "CNY",
+        "quote": "KWD",
+        "rate": "0.0463",
+        "as_of": "2026-10-16",
+        "source": "Frankfurter v2, blended official reference rates",
+        "mode": "live",
+        "fetched_at": "2026-10-16T05:33:04.302475+00:00"
+      }
+    }
+  ],
+  "catalogue_count": 165
+}

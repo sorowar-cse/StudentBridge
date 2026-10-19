@@ -1,0 +1,22 @@
+{
+  "scope": "Assistant hotfix: local regression evidence; model replies in unit tests are fixtures",
+  "python_tests": {
+    "passed": 227,
+    "new_hotfix_cases": 35,
+    "result": "passed",
+    "seconds": 29.33
+  },
+  "focused_tests": {
+    "passed": 61,
+    "result": "passed",
+    "seconds": 5.6
+  },
+  "offline_regression": {
+    "passed": 366,
+    "cases": 366,
+    "model_calls": 0
+  },
+  "live_owner_validation": "Pending: rerun actual Assistant conversion and saved-profile fee question on the owner PC",
+  "sql_changed": false,
+  "note": "The original live failing model amount was not recorded. Equivalent formatting failures were reproduced locally; no claim of live patch success is made."
+}

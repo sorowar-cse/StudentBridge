@@ -1,0 +1,1055 @@
+{
+  "scope": "Generate 15 repeatable SYNTHETIC profile cases with independent expected totals.\n\nInstitution names are reference metadata. Every amount below is invented for\nverification, not an official tuition fee, rent quote, or funding offer.\n",
+  "cases": [
+    {
+      "id": "P01",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Universiti Kebangsaan Malaysia",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Bangi",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 6,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "1000",
+          "currency": "MYR"
+        },
+        "fee_period": "invoice",
+        "billing_interval_months": 0,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "300",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "0",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "2000",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "300",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "1000",
+          "currency": "MYR"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "5200.00",
+      "expected_resources": "4800.00",
+      "expected_gap": "400.00"
+    },
+    {
+      "id": "P02",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Universiti Malaya",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Kuala Lumpur",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 12,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "1100",
+          "currency": "MYR"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "310",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "25",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "2250",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "350",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "MYR"
+        },
+        "buffer_percent": "10",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "11819.50",
+      "expected_resources": "6450.00",
+      "expected_gap": "5369.50"
+    },
+    {
+      "id": "P03",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Universiti Teknologi Malaysia",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Johor Bahru",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 18,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "1200",
+          "currency": "MYR"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "320",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "50",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "2500",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "400",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "MYR"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "16610.00",
+      "expected_resources": "9700.00",
+      "expected_gap": "6910.00"
+    },
+    {
+      "id": "P04",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "International Islamic University Chittagong",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Kumira, Chattogram",
+        "country": "Bangladesh",
+        "start_date": "2026-11-01",
+        "months": 6,
+        "budget_currency": "BDT",
+        "tuition": {
+          "amount": "1300",
+          "currency": "BDT"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "330",
+            "currency": "BDT"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "BDT"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "BDT"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "BDT"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "BDT"
+          }
+        },
+        "one_off": {
+          "amount": "75",
+          "currency": "BDT"
+        },
+        "savings": {
+          "amount": "2750",
+          "currency": "BDT"
+        },
+        "monthly_income": {
+          "amount": "450",
+          "currency": "BDT"
+        },
+        "confirmed_funding": {
+          "amount": "1000",
+          "currency": "BDT"
+        },
+        "buffer_percent": "10",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "6330.50",
+      "expected_resources": "6450.00",
+      "expected_gap": "0.00"
+    },
+    {
+      "id": "P05",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "International Islamic University Malaysia",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Gombak",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 12,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "1400",
+          "currency": "MYR"
+        },
+        "fee_period": "invoice",
+        "billing_interval_months": 0,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "340",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "100",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "3000",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "500",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "MYR"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "10380.00",
+      "expected_resources": "9000.00",
+      "expected_gap": "1380.00"
+    },
+    {
+      "id": "P06",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Tsinghua University",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Beijing",
+        "country": "China",
+        "start_date": "2026-11-01",
+        "months": 18,
+        "budget_currency": "CNY",
+        "tuition": {
+          "amount": "1500",
+          "currency": "CNY"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "350",
+            "currency": "CNY"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "CNY"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "CNY"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "CNY"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "CNY"
+          }
+        },
+        "one_off": {
+          "amount": "125",
+          "currency": "CNY"
+        },
+        "savings": {
+          "amount": "3250",
+          "currency": "CNY"
+        },
+        "monthly_income": {
+          "amount": "550",
+          "currency": "CNY"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "CNY"
+        },
+        "buffer_percent": "10",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "19937.50",
+      "expected_resources": "13150.00",
+      "expected_gap": "6787.50"
+    },
+    {
+      "id": "P07",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Peking University",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Beijing",
+        "country": "China",
+        "start_date": "2026-11-01",
+        "months": 6,
+        "budget_currency": "CNY",
+        "tuition": {
+          "amount": "1600",
+          "currency": "CNY"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "360",
+            "currency": "CNY"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "CNY"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "CNY"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "CNY"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "CNY"
+          }
+        },
+        "one_off": {
+          "amount": "150",
+          "currency": "CNY"
+        },
+        "savings": {
+          "amount": "3500",
+          "currency": "CNY"
+        },
+        "monthly_income": {
+          "amount": "600",
+          "currency": "CNY"
+        },
+        "confirmed_funding": {
+          "amount": "1000",
+          "currency": "CNY"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "6310.00",
+      "expected_resources": "8100.00",
+      "expected_gap": "0.00"
+    },
+    {
+      "id": "P08",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Fudan University",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Shanghai",
+        "country": "China",
+        "start_date": "2026-11-01",
+        "months": 12,
+        "budget_currency": "CNY",
+        "tuition": {
+          "amount": "1700",
+          "currency": "CNY"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "370",
+            "currency": "CNY"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "CNY"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "CNY"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "CNY"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "CNY"
+          }
+        },
+        "one_off": {
+          "amount": "175",
+          "currency": "CNY"
+        },
+        "savings": {
+          "amount": "3750",
+          "currency": "CNY"
+        },
+        "monthly_income": {
+          "amount": "650",
+          "currency": "CNY"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "CNY"
+        },
+        "buffer_percent": "10",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "14096.50",
+      "expected_resources": "11550.00",
+      "expected_gap": "2546.50"
+    },
+    {
+      "id": "P09",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Zhejiang University",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Hangzhou",
+        "country": "China",
+        "start_date": "2026-11-01",
+        "months": 18,
+        "budget_currency": "CNY",
+        "tuition": {
+          "amount": "1800",
+          "currency": "CNY"
+        },
+        "fee_period": "invoice",
+        "billing_interval_months": 0,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "380",
+            "currency": "CNY"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "CNY"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "CNY"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "CNY"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "CNY"
+          }
+        },
+        "one_off": {
+          "amount": "200",
+          "currency": "CNY"
+        },
+        "savings": {
+          "amount": "4000",
+          "currency": "CNY"
+        },
+        "monthly_income": {
+          "amount": "700",
+          "currency": "CNY"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "CNY"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "16040.00",
+      "expected_resources": "16600.00",
+      "expected_gap": "0.00"
+    },
+    {
+      "id": "P10",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Shanghai Jiao Tong University",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Shanghai",
+        "country": "China",
+        "start_date": "2026-11-01",
+        "months": 6,
+        "budget_currency": "CNY",
+        "tuition": {
+          "amount": "1900",
+          "currency": "CNY"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "390",
+            "currency": "CNY"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "CNY"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "CNY"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "CNY"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "CNY"
+          }
+        },
+        "one_off": {
+          "amount": "225",
+          "currency": "CNY"
+        },
+        "savings": {
+          "amount": "4250",
+          "currency": "CNY"
+        },
+        "monthly_income": {
+          "amount": "750",
+          "currency": "CNY"
+        },
+        "confirmed_funding": {
+          "amount": "1000",
+          "currency": "CNY"
+        },
+        "buffer_percent": "10",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "7551.50",
+      "expected_resources": "9750.00",
+      "expected_gap": "0.00"
+    },
+    {
+      "id": "P11",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Universiti Kebangsaan Malaysia",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Bangi",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 12,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "2000",
+          "currency": "MYR"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "400",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "250",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "4500",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "800",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "MYR"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "13850.00",
+      "expected_resources": "14100.00",
+      "expected_gap": "0.00"
+    },
+    {
+      "id": "P12",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Universiti Malaya",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Kuala Lumpur",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 18,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "2100",
+          "currency": "MYR"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "410",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "275",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "4750",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "850",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "MYR"
+        },
+        "buffer_percent": "10",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "23270.50",
+      "expected_resources": "20050.00",
+      "expected_gap": "3220.50"
+    },
+    {
+      "id": "P13",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "Universiti Teknologi Malaysia",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Johor Bahru",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 6,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "2200",
+          "currency": "MYR"
+        },
+        "fee_period": "invoice",
+        "billing_interval_months": 0,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "420",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "300",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "5000",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "900",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "1000",
+          "currency": "MYR"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "7420.00",
+      "expected_resources": "11400.00",
+      "expected_gap": "0.00"
+    },
+    {
+      "id": "P14",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "International Islamic University Chittagong",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Kumira, Chattogram",
+        "country": "Bangladesh",
+        "start_date": "2026-11-01",
+        "months": 12,
+        "budget_currency": "BDT",
+        "tuition": {
+          "amount": "2300",
+          "currency": "BDT"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "430",
+            "currency": "BDT"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "BDT"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "BDT"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "BDT"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "BDT"
+          }
+        },
+        "one_off": {
+          "amount": "325",
+          "currency": "BDT"
+        },
+        "savings": {
+          "amount": "5250",
+          "currency": "BDT"
+        },
+        "monthly_income": {
+          "amount": "950",
+          "currency": "BDT"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "BDT"
+        },
+        "buffer_percent": "10",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "16373.50",
+      "expected_resources": "16650.00",
+      "expected_gap": "0.00"
+    },
+    {
+      "id": "P15",
+      "label": "Synthetic profile verification",
+      "profile": {
+        "version": 1,
+        "university": "International Islamic University Malaysia",
+        "campus": "Synthetic test campus",
+        "department": "Synthetic test department",
+        "programme": "Synthetic verification programme",
+        "study_mode": "Controlled test",
+        "city": "Gombak",
+        "country": "Malaysia",
+        "start_date": "2026-11-01",
+        "months": 18,
+        "budget_currency": "MYR",
+        "tuition": {
+          "amount": "2400",
+          "currency": "MYR"
+        },
+        "fee_period": "semester",
+        "billing_interval_months": 6,
+        "next_tuition_date": "2026-11-01",
+        "living": {
+          "rent": {
+            "amount": "440",
+            "currency": "MYR"
+          },
+          "food": {
+            "amount": "200",
+            "currency": "MYR"
+          },
+          "transport": {
+            "amount": "80",
+            "currency": "MYR"
+          },
+          "utilities": {
+            "amount": "50",
+            "currency": "MYR"
+          },
+          "other": {
+            "amount": "70",
+            "currency": "MYR"
+          }
+        },
+        "one_off": {
+          "amount": "350",
+          "currency": "MYR"
+        },
+        "savings": {
+          "amount": "5500",
+          "currency": "MYR"
+        },
+        "monthly_income": {
+          "amount": "1000",
+          "currency": "MYR"
+        },
+        "confirmed_funding": {
+          "amount": "0",
+          "currency": "MYR"
+        },
+        "buffer_percent": "0",
+        "annual_cost_growth_percent": "0",
+        "fx_stress_percent": "0",
+        "source_note": "SYNTHETIC TEST DATA: every amount is invented, not an official university fee.",
+        "confirmed": true
+      },
+      "expected_total": "22670.00",
+      "expected_resources": "23500.00",
+      "expected_gap": "0.00"
+    }
+  ]
+}

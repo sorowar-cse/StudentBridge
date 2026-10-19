@@ -1,0 +1,22 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "streamlit": "1.65.0",
+    "pydantic": "2.13.5",
+    "requests": "2.34.2",
+    "cryptography": "50.0.1",
+    "argon2-cffi": "25.1.0",
+    "scikit-learn": "1.8.0",
+    "Babel": "2.18.0",
+    "python-dotenv": "1.2.4",
+    "pandas": "2.2.3",
+    "pytest": "9.1.1",
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0",
+    "Pillow": "12.3.0"
+  },
+  "cloud_credentials_supplied": false,
+  "live_groq_inference_run": false,
+  "hosted_supabase_run": false,
+  "published_app_created": false
+}

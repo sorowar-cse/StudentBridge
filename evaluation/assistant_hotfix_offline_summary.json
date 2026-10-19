@@ -1,0 +1,22 @@
+{
+  "provider": "offline",
+  "planner": null,
+  "reviewer": null,
+  "dataset": "Synthetic demo FX; grouped authored question templates",
+  "split": "test",
+  "cases_run": 366,
+  "planned_cases": 366,
+  "task_completion": 1.0,
+  "exact_conversion_rate": 1.0,
+  "adversarial_expected_response_rate": 1.0,
+  "actual_model_calls": 0,
+  "mean_seconds": 0.0005612021857923497,
+  "risk_synthetic_holdout": {
+    "normal_test_n": 500,
+    "normal_flag_rate": 0.022,
+    "constructed_anomaly_n": 100,
+    "constructed_anomaly_flag_rate": 1.0,
+    "scope": "Synthetic held-out seed 403; no real fraud detection claim"
+  },
+  "limits": "Generated test cases were used during debugging: this is a regression benchmark, not blind generalization. Offline results are deterministic router/tool checks, not real LLM accuracy. Adversarial response checks do not measure production attack resistance. See pytest for state-change security tests."
+}
