@@ -4,9 +4,8 @@
 
 StudentBridge brings student-entered fees, monthly cash flow, published currency references and explicitly approved simulated transfers into one Streamlit application. It targets an invite-only pilot of at most 15 enrolled accounts.
 
-**Application:** #will be added 
-**Repository:** #will be added 
-**Reviewed commit:** #will be added   
+**Application:** [StudentBridge-Live](https://studentbridge.streamlit.app/) 
+ 
 **Release:** 4.0.0 · documentation prepared 19 October 2026
 
 
@@ -90,7 +89,7 @@ Deploy `app.py` on Streamlit Community Cloud using the sanitized GitHub reposito
 ## Team
 
 - **Leader:** Md. Sorowar Mahabub Rabby, MSc Research Mode (pursuing), Faculty of Engineering & Built Environment, Universiti Kebangsaan Malaysia. Email: sorowar.cse1@gmail.com.
-- **Member 2:**  #will be added .
+- **Member 2:**  Dr. Hasniza bt Hambali, PhD (Year 3), Faculty: Faculty of Engineering & Built Environment (FKAB), University: Universiti Kebangsaan Malaysia (UKM).
 
 
 ## License and acknowledgments
