@@ -9,6 +9,7 @@ from .cloud import CloudStore
 from .documents import student_profile_pdf, forecast_pdf
 from .money import FinanceError
 from .profile import validated_profile, forecast
+from .ui_hints import hint
 
 
 def profile_page(t, store, token, catalog, codes):
@@ -21,7 +22,7 @@ def profile_page(t, store, token, catalog, codes):
     with st.expander(t("official_reference")):
         for abbr in sorted({r["abbr"] for r in catalog.records}):
             record = next(r for r in catalog.records if r["abbr"] == abbr)
-            st.write(f"**{abbr}** · {record['university']} · {record['city']}")
+            st.write(f"**{abbr}** · {record["university"]} · {record["city"]}")
             st.link_button(t("source_link") + " · " + abbr, record["source_url"])
 
     def select_code(label, default, key):
@@ -35,7 +36,14 @@ def profile_page(t, store, token, catalog, codes):
         )
 
     def money_input(label, value, key):
-        return st.text_input(t(label), str(value), max_chars=32, key=key)
+        example = "percent" if label in {"contingency", "cost_growth", "fx_stress"} else "amount"
+        return st.text_input(
+            t(label),
+            str(value),
+            max_chars=32,
+            key=key,
+            placeholder=hint(t, example),
+        )
 
     def amt(field, default="0"):
         return saved.get(field, {}).get("amount", default)
@@ -44,28 +52,53 @@ def profile_page(t, store, token, catalog, codes):
         left, right = st.columns(2)
         with left:
             university = st.text_input(
-                t("university"), saved.get("university", ""), max_chars=140, key="p_university"
+                t("university"),
+                saved.get("university", ""),
+                max_chars=140,
+                key="p_university",
+                placeholder=hint(t, "university"),
             )
             campus = st.text_input(
-                t("campus"), saved.get("campus", ""), max_chars=100, key="p_campus"
+                t("campus"),
+                saved.get("campus", ""),
+                max_chars=100,
+                key="p_campus",
+                placeholder=hint(t, "campus"),
             )
             department = st.text_input(
-                t("department"), saved.get("department", ""), max_chars=140, key="p_department"
+                t("department"),
+                saved.get("department", ""),
+                max_chars=140,
+                key="p_department",
+                placeholder=hint(t, "department"),
             )
             programme = st.text_input(
-                t("programme"), saved.get("programme", ""), max_chars=140, key="p_programme"
+                t("programme"),
+                saved.get("programme", ""),
+                max_chars=140,
+                key="p_programme",
+                placeholder=hint(t, "programme"),
             )
             study_mode = st.text_input(
                 t("study_mode"),
                 saved.get("study_mode", "Research"),
                 max_chars=50,
                 key="p_study_mode",
+                placeholder=hint(t, "study_mode"),
             )
             city = st.text_input(
-                t("city_input"), saved.get("city", ""), max_chars=100, key="p_city"
+                t("city_input"),
+                saved.get("city", ""),
+                max_chars=100,
+                key="p_city",
+                placeholder=hint(t, "city"),
             )
             country = st.text_input(
-                t("country"), saved.get("country", ""), max_chars=80, key="p_country"
+                t("country"),
+                saved.get("country", ""),
+                max_chars=80,
+                key="p_country",
+                placeholder=hint(t, "country"),
             )
             start = st.date_input(
                 t("start_date"),
@@ -136,7 +169,7 @@ def profile_page(t, store, token, catalog, codes):
             stress = money_input("fx_stress", saved.get("fx_stress_percent", "0"), "p_stress")
             st.caption(t("stress_help"))
             note = st.text_area(
-                t("source_note"), saved.get("source_note", ""), max_chars=500, key="p_note"
+                t("source_note"), saved.get("source_note", ""), max_chars=500, key="p_note", placeholder=hint(t, "note")
             )
         confirmed = st.checkbox(t("confirm_profile"), key="p_confirmed")
         submit = st.form_submit_button(t("profile_save"))
@@ -220,7 +253,7 @@ def forecast_page(t, store, token, fx, catalog, config, consent):
         (c, "gap", "funding_gap"),
         (d, "timing_gap", "upfront_timing_gap"),
     ]:
-        col.metric(t(key), f"{r[field]} {r['currency']}")
+        col.metric(t(key), f"{r[field]} {r["currency"]}")
     if r["first_shortfall"]:
         st.warning(t("first_shortfall") + ": " + r["first_shortfall"])
     st.subheader(t("monthly_cashflow"))
@@ -246,7 +279,7 @@ def forecast_page(t, store, token, fx, catalog, config, consent):
     if r["references"]:
         for ref in r["references"]:
             st.caption(
-                f"{ref['base']} → {ref['quote']} · {ref['source']} · {t('reference_date')}: {ref['as_of']} · {ref['fetched_at']}"
+                f"{ref["base"]} → {ref["quote"]} · {ref["source"]} · {t("reference_date")}: {ref["as_of"]} · {ref["fetched_at"]}"
             )
     else:
         st.caption(t("same_currency_note"))
@@ -324,9 +357,24 @@ def account_page(t, store, token, clear_results):
     st.info(t("reset_help") if isinstance(store, CloudStore) else t("account_help"))
     if isinstance(store, CloudStore):
         with st.form("change_password"):
-            current = st.text_input(t("current_password"), type="password", max_chars=128)
-            new = st.text_input(t("choose_password"), type="password", max_chars=128)
-            again = st.text_input(t("repeat_password"), type="password", max_chars=128)
+            current = st.text_input(
+                t("current_password"),
+                type="password",
+                max_chars=128,
+                placeholder=hint(t, "password"),
+            )
+            new = st.text_input(
+                t("choose_password"),
+                type="password",
+                max_chars=128,
+                placeholder=hint(t, "new_password"),
+            )
+            again = st.text_input(
+                t("repeat_password"),
+                type="password",
+                max_chars=128,
+                placeholder=hint(t, "repeat_password"),
+            )
             submit = st.form_submit_button(t("change_password"))
         if submit:
             try:

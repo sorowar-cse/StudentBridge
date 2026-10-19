@@ -32,6 +32,7 @@ from studentbridge.cloud import CloudStore, CloudBroker
 from studentbridge.profile_ui import profile_page, forecast_page, account_page
 from studentbridge.personal_assistant import personal_fee_answer, render_personal_fee
 from studentbridge.team import members, profile_image
+from studentbridge.ui_hints import hint
 from studentbridge.university import UniversityCatalog, budget_scenario, due_plan
 
 ROOT = Path(__file__).resolve().parent
@@ -64,7 +65,7 @@ if "settings" not in st.session_state:
     }
 
 with st.sidebar:
-    st.markdown('<div class="sb-brand">StudentBridge</div>', unsafe_allow_html=True)
+    st.markdown("<div class=\"sb-brand\">StudentBridge</div>", unsafe_allow_html=True)
     st.selectbox("Language", list(LANGUAGES), format_func=LANGUAGES.get, key="language")
 t = Translator(st.session_state.language)
 NAV = [
@@ -123,7 +124,7 @@ def accept_login(new_token):
 
 st.markdown(
     f'<div class="sb-hero"><div class="sb-kicker">{escape(t("brand_line"))}</div>'
-    f"<h1>{escape(t('hero'))}</h1><p>{escape(t('hero_sub'))}</p></div>",
+    f"<h1>{escape(t("hero"))}</h1><p>{escape(t("hero_sub"))}</p></div>",
     unsafe_allow_html=True,
 )
 st.markdown(f'<div class="sb-safety">{escape(t("simulation"))}</div>', unsafe_allow_html=True)
@@ -151,14 +152,14 @@ def pdf_download(label, data, name, key):
 
 def reference(ref):
     kind = "live" if ref["mode"] == "live" else "offline"
-    st.caption(f"{t('rate_source')}: {t(kind)} · {t('reference_date')}: {ref['as_of']}")
+    st.caption(f"{t("rate_source")}: {t(kind)} · {t("reference_date")}: {ref["as_of"]}")
     st.caption(t("reference_note") if kind == "live" else t("illustrative_note"))
 
 
 def programme_card(record):
-    st.write(f"**{record['university']} · {record['programme']}**")
+    st.write(f"**{record["university"]} · {record["programme"]}**")
     st.caption(
-        f"{record['city']}, {t(record['country'])} · {t(record['level'])} · {record['language']}"
+        f"{record["city"]}, {t(record["country"])} · {t(record["level"])} · {record["language"]}"
     )
     if record["fee"] is None:
         st.info(t("manual_fee"))
@@ -167,7 +168,7 @@ def programme_card(record):
             "programme_period" if record["fee_period"] == "programme" else record["fee_period"]
         )
         st.write(
-            f"{t('reference_fee')}: **{record['fee']} {record['currency']} / {t(period_key)}**"
+            f"{t("reference_fee")}: **{record["fee"]} {record["currency"]} / {t(period_key)}**"
         )
     st.caption(t("checked") + ": " + record["checked_on"])
     st.link_button(t("source_link"), record["source_url"])
@@ -181,9 +182,9 @@ def provider_table(options):
         [
             {
                 t("provider"): r["provider"],
-                t("spend"): f"{major(r['spend_minor'], r['source'])} {r['source']}",
-                t("fee_included"): f"{major(r['fee_minor'], r['source'])} {r['source']}",
-                t("received"): f"{major(r['receive_minor'], r['target'])} {r['target']}",
+                t("spend"): f"{major(r["spend_minor"], r["source"])} {r["source"]}",
+                t("fee_included"): f"{major(r["fee_minor"], r["source"])} {r["source"]}",
+                t("received"): f"{major(r["receive_minor"], r["target"])} {r["target"]}",
                 t("minutes_estimate"): r["minutes"],
             }
             for r in options
@@ -219,7 +220,7 @@ def show_developers():
                     else member["study_status"]
                 )
                 for label, value in [
-                    ("degree", f"{member['degree']} · {status}"),
+                    ("degree", f"{member["degree"]} · {status}"),
                     ("faculty", member["faculty"]),
                     ("university", member["university"]),
                     ("email", member["email"]),
@@ -359,6 +360,7 @@ def show_guide():
                     t(label),
                     settings["models"][provider][role],
                     max_chars=100,
+                    placeholder=hint(t, "model"),
                     key=role + "_input",
                     on_change=update_model,
                     args=(role,),
@@ -422,12 +424,26 @@ if not store.has_users():
     st.subheader(t("setup_title"))
     st.write(t("setup_text"))
     with st.form("first_setup"):
-        username = st.text_input(t("username"), value="student", max_chars=32, key="setup_username")
+        username = st.text_input(
+            t("username"),
+            value="student",
+            max_chars=32,
+            key="setup_username",
+            placeholder=hint(t, "username"),
+        )
         password = st.text_input(
-            t("choose_password"), type="password", max_chars=128, key="setup_password"
+            t("choose_password"),
+            type="password",
+            max_chars=128,
+            key="setup_password",
+            placeholder=hint(t, "new_password"),
         )
         again = st.text_input(
-            t("repeat_password"), type="password", max_chars=128, key="setup_repeat"
+            t("repeat_password"),
+            type="password",
+            max_chars=128,
+            key="setup_repeat",
+            placeholder=hint(t, "repeat_password"),
         )
         submitted = st.form_submit_button(t("create_account"))
     if submitted:
@@ -455,9 +471,14 @@ except FinanceError:
             t("email_login" if backend == "supabase" else "username"),
             max_chars=254 if backend == "supabase" else 32,
             key="login_username",
+            placeholder=hint(t, "email" if backend == "supabase" else "username"),
         )
         password = st.text_input(
-            t("password"), type="password", max_chars=128, key="login_password"
+            t("password"),
+            type="password",
+            max_chars=128,
+            key="login_password",
+            placeholder=hint(t, "password"),
         )
         submitted = st.form_submit_button(t("sign_in"))
     if submitted:
@@ -510,7 +531,7 @@ if page == "dashboard":
     try:
         personal = store.student_profile(token)
         if personal:
-            st.write(f"**{personal['university']} · {personal['programme']}**")
+            st.write(f"**{personal["university"]} · {personal["programme"]}**")
             st.caption(t("profile_updated", date=personal.get("updated_at", "")))
         else:
             st.info(t("profile_required"))
@@ -532,9 +553,9 @@ if page == "dashboard":
     if bundle:
         result = bundle["result"]
         c1, c2, c3 = st.columns(3)
-        c1.metric(t("estimated_cost"), f"{result['total']} {result['currency']}")
-        c2.metric(t("resources"), f"{result['resources']} {result['currency']}")
-        c3.metric(t("gap"), f"{result['funding_gap']} {result['currency']}")
+        c1.metric(t("estimated_cost"), f"{result["total"]} {result["currency"]}")
+        c2.metric(t("resources"), f"{result["resources"]} {result["currency"]}")
+        c3.metric(t("gap"), f"{result["funding_gap"]} {result["currency"]}")
     else:
         st.info(t("no_budget"))
     st.subheader(t("quick_actions"))
@@ -556,8 +577,8 @@ if page == "dashboard":
             [
                 {
                     t("receipt_id"): e["details"]["quote_id"],
-                    t("spend"): f"{e['details']['spent']} {e['details']['source']}",
-                    t("received"): f"{e['details']['received']} {e['details']['target']}",
+                    t("spend"): f"{e["details"]["spent"]} {e["details"]["source"]}",
+                    t("received"): f"{e["details"]["received"]} {e["details"]["target"]}",
                 }
                 for e in reversed(completed[-5:])
             ],
@@ -627,9 +648,9 @@ elif page == "assistant":
             render_personal_fee(st, t.language, answer)
         elif answer["kind"] == "conversion":
             result = answer["facts"]
-            st.metric(t("converted"), f"{result['converted']} {result['target']}")
+            st.metric(t("converted"), f"{result["converted"]} {result["target"]}")
             st.write(
-                f"{result['amount']} {result['base']} → {result['converted']} {result['target']}"
+                f"{result["amount"]} {result["base"]} → {result["converted"]} {result["target"]}"
             )
             reference(result["reference"])
             pdf_download(
@@ -666,7 +687,13 @@ elif page == "converter":
             source = select_currency("from", codes, "BDT", "convert_source")
         with c2:
             target = select_currency("to", codes, "CNY", "convert_target")
-        amount = st.text_input(t("source_amount"), value="", max_chars=32, key="convert_amount")
+        amount = st.text_input(
+            t("source_amount"),
+            value="",
+            max_chars=32,
+            key="convert_amount",
+            placeholder=hint(t, "amount"),
+        )
         reverse = st.checkbox(t("reverse"), key="reverse_conversion")
         submitted = st.button(t("calculate_conversion"), key="action_calculate_conversion")
     if submitted:
@@ -678,8 +705,8 @@ elif page == "converter":
             display_error(exc)
     result = st.session_state.get("conversion")
     if result:
-        st.metric(t("converted"), f"{result['converted']} {result['target']}")
-        st.write(f"{result['amount']} {result['base']} → {result['converted']} {result['target']}")
+        st.metric(t("converted"), f"{result["converted"]} {result["target"]}")
+        st.write(f"{result["amount"]} {result["base"]} → {result["converted"]} {result["target"]}")
         reference(result["reference"])
         st.subheader(t("sensitivity"))
         rows = []
@@ -690,7 +717,7 @@ elif page == "converter":
                     t("movement"): f"{Decimal(change) * 100:+.0f}%",
                     t(
                         "received"
-                    ): f"{rounded(Decimal(result['amount']) * rate, result['target'])} {result['target']}",
+                    ): f"{rounded(Decimal(result["amount"]) * rate, result["target"])} {result["target"]}",
                 }
             )
         st.dataframe(rows, hide_index=True)
@@ -727,7 +754,7 @@ elif page == "planner":
         [r["id"] for r in available],
         key="programme_id",
         format_func=lambda i: (
-            f"{catalog.get(i)['abbr']} · {catalog.get(i)['programme']} · {t(catalog.get(i)['student_type'])}"
+            f"{catalog.get(i)["abbr"]} · {catalog.get(i)["programme"]} · {t(catalog.get(i)["student_type"])}"
         ),
     )
     record = catalog.get(record_id)
@@ -745,7 +772,11 @@ elif page == "planner":
 
     def text_input(key, default, max_chars=32):
         return st.text_input(
-            t(key), defaults.get(key, default), max_chars=max_chars, key=prefix + key
+            t(key),
+            defaults.get(key, default),
+            max_chars=max_chars,
+            key=prefix + key,
+            placeholder=hint(t, "amount"),
         )
 
     with st.container(border=True):
@@ -757,6 +788,7 @@ elif page == "planner":
                 defaults.get("tuition", record["fee"] or "0"),
                 max_chars=32,
                 key=prefix + "tuition",
+                placeholder=hint(t, "amount"),
             )
             periods = ["programme", "year", "semester", "trimester", "invoice"]
             period_default = defaults.get("fee_period", record["fee_period"])
@@ -790,6 +822,7 @@ elif page == "planner":
                     defaults.get("living", {}).get(field, record["living_monthly"][field]),
                     max_chars=32,
                     key=prefix + field,
+                    placeholder=hint(t, "amount"),
                 )
                 for field in ("rent", "food", "transport", "utilities", "other")
             }
@@ -797,17 +830,17 @@ elif page == "planner":
         with col3:
             tax_percent = st.text_input(
                 t("tax"),
-                defaults.get(
-                    "tax_percent", "6" if record_id in {"um_meng_int", "iium_mmgt"} else "0"
-                ),
+                defaults.get("tax_percent", "6" if record_id in {"um_meng_int", "iium_mmgt"} else "0"),
                 max_chars=8,
                 key=prefix + "tax",
+                placeholder=hint(t, "percent"),
             )
             buffer_percent = st.text_input(
                 t("contingency"),
                 defaults.get("buffer_percent", "10"),
                 max_chars=8,
                 key=prefix + "contingency",
+                placeholder=hint(t, "percent"),
             )
             savings = text_input("savings", "0")
             monthly_income = st.text_input(
@@ -815,12 +848,14 @@ elif page == "planner":
                 defaults.get("monthly_income", "0"),
                 max_chars=32,
                 key=prefix + "income",
+                placeholder=hint(t, "amount"),
             )
             confirmed_funding = st.text_input(
                 t("funding"),
                 defaults.get("confirmed_funding", "0"),
                 max_chars=32,
                 key=prefix + "funding",
+                placeholder=hint(t, "amount"),
             )
         confirmed = st.checkbox(t("confirm_fee"), key=prefix + "confirmed")
         save = st.checkbox(t("save_plan"), key=prefix + "save")
@@ -866,7 +901,7 @@ elif page == "planner":
         for col, label, field in zip(
             cols, ["estimated_cost", "resources", "gap"], ["total", "resources", "funding_gap"]
         ):
-            col.metric(t(label), f"{result[field]} {result['currency']}")
+            col.metric(t(label), f"{result[field]} {result["currency"]}")
         fields = ["tuition", "tax_assumption", "living_total", "one_off", "contingency"]
         labels = ["tuition", "tax_amount", "living", "one_off", "buffer"]
         amounts = [result[field] for field in fields]
@@ -880,7 +915,7 @@ elif page == "planner":
         st.dataframe(
             {
                 t("category"): [t(label) for label in labels],
-                t("amount"): [f"{value} {result['currency']}" for value in amounts],
+                t("amount"): [f"{value} {result["currency"]}" for value in amounts],
             },
             hide_index=True,
         )
@@ -940,7 +975,7 @@ elif page == "planner":
         if st.button(t("convert_total"), key="convert_budget"):
             try:
                 converted = fx.convert(result["total"], result["currency"], home)
-                st.success(f"{converted['converted']} {home}")
+                st.success(f"{converted["converted"]} {home}")
                 reference(converted["reference"])
             except FinanceError as exc:
                 display_error(exc)
@@ -953,8 +988,20 @@ elif page == "planner":
     st.divider()
     st.subheader(t("due_title"))
     with st.container(border=True):
-        due_amount = st.text_input(t("due_amount"), value="", max_chars=32, key="due_amount")
-        available_cash = st.text_input(t("due_available"), "0", max_chars=32, key="due_available")
+        due_amount = st.text_input(
+            t("due_amount"),
+            value="",
+            max_chars=32,
+            key="due_amount",
+            placeholder=hint(t, "amount"),
+        )
+        available_cash = st.text_input(
+            t("due_available"),
+            "0",
+            max_chars=32,
+            key="due_available",
+            placeholder=hint(t, "amount"),
+        )
         due_months = st.number_input(
             t("due_months"), min_value=1, max_value=60, value=3, key="due_months"
         )
@@ -979,7 +1026,13 @@ elif page == "transfers":
     with st.container(border=True):
         source = select_currency("spend_currency", codes, "BDT", "transfer_source")
         target = select_currency("receive_currency", codes, "CNY", "transfer_target")
-        amount = st.text_input(t("spend_budget"), value="", max_chars=32, key="transfer_amount")
+        amount = st.text_input(
+            t("spend_budget"),
+            value="",
+            max_chars=32,
+            key="transfer_amount",
+            placeholder=hint(t, "amount"),
+        )
         new_recipient = st.checkbox(t("new_recipient"), key="new_recipient")
         submitted = st.button(t("compare"), key="action_compare")
     if submitted:
@@ -1043,7 +1096,10 @@ elif page == "transfers":
         with st.form("execute_" + quote["id"]):
             approved = st.checkbox(t("approve"), key="approve_" + quote["id"])
             confirmation = st.text_input(
-                t("confirmation", code=quote["id"][-6:]), max_chars=6, key="confirm_" + quote["id"]
+                t("confirmation", code=quote["id"][-6:]),
+                max_chars=6,
+                key="confirm_" + quote["id"],
+                placeholder=hint(t, "confirmation"),
             )
             execute = st.form_submit_button(
                 t("execute"), disabled=user["role"] != "executor" or quote["risk"]["blocked"]
@@ -1065,9 +1121,9 @@ elif page == "transfers":
                 {t("category"): t(label), t("amount"): value}
                 for label, value in [
                     ("receipt_id", receipt["quote_id"]),
-                    ("spend", f"{receipt['spent']} {receipt['source']}"),
-                    ("fee_included", f"{receipt['fee_included']} {receipt['source']}"),
-                    ("received", f"{receipt['received']} {receipt['target']}"),
+                    ("spend", f"{receipt["spent"]} {receipt["source"]}"),
+                    ("fee_included", f"{receipt["fee_included"]} {receipt["source"]}"),
+                    ("received", f"{receipt["received"]} {receipt["target"]}"),
                 ]
             ],
             hide_index=True,
@@ -1096,7 +1152,13 @@ elif page == "wallet":
     st.subheader(t("add_funds_title"))
     with st.container(border=True):
         code = select_currency("fund_currency", codes, "BDT", "wallet_currency")
-        amount = st.text_input(t("fund_amount"), value="", max_chars=32, key="wallet_amount")
+        amount = st.text_input(
+            t("fund_amount"),
+            value="",
+            max_chars=32,
+            key="wallet_amount",
+            placeholder=hint(t, "amount"),
+        )
         add = st.button(t("add_funds"), key="action_add_funds", disabled=user["role"] != "executor")
     if add:
         try:
