@@ -2,6 +2,7 @@ from pathlib import Path
 import pytest
 from streamlit.testing.v1 import AppTest
 from studentbridge.store import Store
+from studentbridge.team import members
 from studentbridge.i18n import Translator
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -105,7 +106,9 @@ def test_developer_and_guide_accessible_without_login(monkeypatch, tmp_path, lan
     at.run()
     navigate(at, "developer")
     content = " ".join(str(e.value) for e in [*at.markdown, *at.caption, *at.subheader])
-    assert "Md. Sorowar Mahabub Rabby" in content and "XXXXYYYY" in content
+    # Team metadata is owner-editable; the public page must render each member.
+    for member in members():
+        assert member["name"] in content
     assert "sorowar.cse1@gmail.com" in content and "+60 17-741 7099" in content
     navigate(at, "guide")
     assert any(e.label == Translator(language)("connections") for e in at.expander)

@@ -204,9 +204,15 @@ def show_developers():
                 if image:
                     st.image(str(image), width=180)
                 else:
-                    initials = "SM" if member["id"] == "leader" else "XY"
+                    # Use the member's name when a replaceable photo is absent.
+                    name_parts = [
+                        part
+                        for part in member["name"].replace(".", "").split()
+                        if part.casefold() not in {"md", "dr", "bt", "binti", "bin"}
+                    ]
+                    initials = "".join(part[0] for part in name_parts[:2]).upper() or "SB"
                     st.markdown(
-                        f'<div class="sb-initials">{initials}</div>', unsafe_allow_html=True
+                        f'<div class="sb-initials">{escape(initials)}</div>', unsafe_allow_html=True
                     )
             with details:
                 st.markdown(
