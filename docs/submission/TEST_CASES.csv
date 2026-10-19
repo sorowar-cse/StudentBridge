@@ -1,0 +1,32 @@
+﻿Case_ID,Area,Method_or_artifact,Preconditions,Action,Expected_result,Evidence_status
+TC01,Configuration,doctor.py,Configured development environment,Run doctor and capture exit/result,Valid configuration or explicit actionable failure,Owner console pass; sanitized source file to attach
+TC02,Authentication,Manual/doctor --login,Confirmed synthetic user A,Sign in with correct credentials,Own session established; no secret shown,Owner deployed login confirmed; screenshot to attach
+TC03,Authentication,Manual,Synthetic account,Try invalid password,Access denied with no financial data,Pending hosted
+TC04,Membership,tests/sql_security.mjs,Isolated SQL suite,Enroll account 16 after 15 existing,New enrollment rejected atomically,Verified development
+TC05,Session,tests/test_cloud_v4.py,Mocked Auth endpoints,"Exercise refresh, expiry and different users",No cross-session token; absolute lifetime enforced,Verified development
+TC06,Isolation,check_cloud_security.py,Two blank hosted synthetic accounts,B queries A document through REST,Empty own-scope result; no A data,Owner actual REST checker passed; source artifact to attach
+TC07,Role control,check_cloud_security.py,Two blank hosted synthetic accounts,Attempt direct role PATCH,Database grants deny role change,Owner direct-role denial passed; source artifact to attach
+TC08,Encryption,tests/test_cloud_v4.py,Synthetic encrypted document,Change owner/kind/ciphertext,Authentication/decryption failure,Verified development
+TC09,Persistence,Manual,Saved synthetic profile,Reboot app and sign in again,Same own profile loads from Supabase,Deployed profile visible; explicit reboot recording pending
+TC10,Language,tests/test_v4_app.py and manual,Fresh session,Check English then three translations,English default; labels update coherently,Local tested; refreshed live UI owner-confirmed
+TC11,Forecast,DEMO_SCENARIO.md,Six-month MYR case,Save declared inputs and forecast,Cost18480/resources24000/gap0/timing4580,Pending hosted
+TC12,Billing schedule,tests/test_profile_v4.py,Month-end/interval cases,Generate future tuition dates,Original due-date anchor preserved,Verified development
+TC13,Money precision,tests/test_money_fx.py,Decimal test inputs,Try valid precision and invalid scientific notation,Exact rounding; unsupported format rejected,Verified development
+TC14,Published FX,scripts/smoke_live_fx.py,Internet and supported pair,Run smoke script and inspect source/date,Positive finite pair-matched dated reference,Owner doctor MYR/CNY observation 2026-10-19; screenshot pending
+TC15,FX failure,tests/test_money_fx.py,Mock stale/future/invalid response,Invoke conversion,Reject invalid/stale rate; no silent illustrative fallback,Verified development
+TC16,AI baseline,scripts/evaluate.py,Existing synthetic request corpus,Run documented offline evaluation,Recorded regression outcome with zero LLM calls,Owner offline rerun 366/366 with zero LLM calls
+TC17,Real AI,Manual,Groq configured and user consent,Ask Convert 100 MYR to CNY,Actual review outcome/model IDs shown or explicit failure,Four Groq schema probes passed; app success owner-confirmed
+TC18,Prompt/source control,tests/test_llm_adapter.py and tests/test_security.py,Adversarial/ambiguous request fixtures,Request override or invented source,Block or clarify before financial tool execution,Verified development
+TC19,AI quota,tests/sql_security.mjs,Isolated SQL quota cases,Exceed bounded shared allowance,Further task reservation denied,Verified development
+TC20,Quote signature,tests/sql_security.mjs,Isolated signed quote,Alter signed amount or signature,Reject tampered payload,Verified development
+TC21,Approval,Manual and SQL suite,Executor with quote,Omit approval or use wrong suffix,No debit or receipt for fresh execution,Verified development; hosted pending
+TC22,Expiry,Manual and SQL suite,Fresh unexecuted quote,Wait beyond expiry then execute,Reject stale quote with unchanged wallets,Verified development; hosted pending
+TC23,Execution,Manual,Executor with simulated funds,Approve permitted quote and execute,One atomic debit/credit/receipt/audit,Pending hosted
+TC24,Replay,Manual and SQL suite,Completed quote,Execute same quote again,Original receipt and no second debit,Verified development; hosted pending
+TC25,Role denial,Manual and SQL suite,Viewer/planner synthetic users,Try quote/execute by restricted role,Viewer cannot quote; planner cannot execute,Verified development; hosted pending
+TC26,Limits,tests/sql_security.mjs,Isolated limit fixtures,Exceed transaction/day/frequency/balance bounds,Reject and roll back invalid mutation,Verified development
+TC27,Audit,tests/sql_security.mjs,Isolated test database,Alter event then attempt mutation,Integrity failure blocks mutation,Verified development
+TC28,PDF,Manual and document tests,Own synthetic completed receipt,Download and open PDF,StudentBridge header/fields/computer-generated footer,Local tested; deployed PDF owner-confirmed; screenshot pending
+TC29,Deletion,check_cloud_security.py and manual,Blank-account marker or saved synthetic profile,Delete B profile; inspect A,B documents removed; A untouched,Owner checker deletion isolation passed; source artifact to attach
+TC30,Privacy/release,Manual review,Staged repo and video,"Review file list, diff, exports and recording",No secrets/private real data; placeholders completed,Pending team review
+TC31,Personal fee lookup,tests/test_assistant_hotfix.py and manual,Signed-in saved synthetic profile,Ask my tuition amount and next unpaid due date,Own recorded fee/date with no LLM call; missing profile prompts setup,"Local tested; owner app use reported, capture still required"

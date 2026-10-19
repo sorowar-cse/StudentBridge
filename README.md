@@ -1,45 +1,47 @@
-# StudentBridge v4
+# StudentBridge
 
-**2026 Shenzhen International FinTech Competition, International Track · Topic C: Cross-border & Student Finance Assistant**
+**2026 Shenzhen International FinTech Competition, International Track**  
+**Topic C: Cross-border & Student Finance Assistant**
 
-StudentBridge brings student-entered fees, monthly cash flow, published currency references and explicitly approved simulated transfers into one Streamlit application. It targets an invite-only pilot of at most 15 enrolled accounts.
+StudentBridge helps international students record tuition schedules and living costs, inspect monthly cash shortfalls, convert supported currencies and approve controlled sandbox transfers. The pilot uses Python 3.12, Streamlit, Groq, Frankfurter and Supabase Auth/PostgreSQL, with at most 15 enrolled accounts.
 
-**Application:** [StudentBridge-Live](https://studentbridge.streamlit.app/) 
- 
-**Release:** 4.0.0 · documentation prepared 19 October 2026
+**Live application:** https://studentbridge.streamlit.app/  
+**Source repository:** https://github.com/sorowar-cse/StudentBridge  
+**Version:** corrected v4 pilot. Documentation updated 20 October 2026.  
+**Reviewed executable-code commit:** `ca161fbfdee8ef9594a577e767d1e7e0836fe242`
 
+The live app requires an owner-provisioned pilot login. Public signup stays closed.
 
-## What it does
+## Student workflow
 
-- Saves an encrypted student profile with university, department, programme, location, actual tuition amount and billing schedule.
-- Forecasts up to 96 monthly buckets using living costs, savings, confirmed income, reserve, growth and optional FX stress. Shows both total funding gap and early timing shortfall.
-- Converts supported currencies to/from CNY and other supported pairs using dated Frankfurter reference observations. Coverage is discovered from the provider. Offline illustrative anchors are clearly labeled.
-- Retrieves curated programme references with source URLs and checked dates.
-- Uses optional Groq planner/reviewer models with typed plans and deterministic validation. Calculations remain Python tools.
-- Simulates fee comparisons and signed, expiring transfers with approval, roles, limits, atomic database updates, replay protection and audit verification.
-- Starts in English and supports Bangla, Simplified Chinese and Malay. Downloads English-labeled planning and receipt PDFs.
+1. Save your institution, programme, location, tuition amount/currency and next unpaid due date. Add living costs, savings and confirmed resources.
+2. Review the monthly forecast, including the total funding gap and the deepest monthly timing shortfall.
+3. Ask a personal tuition question to retrieve your recorded bill privately, or use an optional reviewed Groq request for supported financial tools.
+4. Inspect dated FX observations and fictional provider fees. An executor may approve and execute a signed sandbox quote.
+5. Download StudentBridge planning and receipt PDFs. English is the default interface, with Bangla, Chinese and Malay options.
 
-## Scope
+## Financial and algorithm scope
 
-**No real money moves.** Wallet balances and the Campus, Value and Swift providers are fictional. FX data is a published reference, not an executable bank quote. University entries are curated reference material; personal fees are user-provided. Forecasts depend on declared assumptions and do not predict future FX or university policy.
+Wallet balances, transfers and provider fee models are simulated. The app moves no real money. FX values are published references, not executable bank prices. Personal tuition and costs are user-provided; curated university references retain source URLs and checked dates. A forecast is a scenario calculation, not a prediction of future FX or verified university fees.
 
-SAGE-FX is our name for the composition of source retrieval, constrained planning/review, exact tools, anomaly screening and controlled execution. It uses established algorithms and cryptographic libraries. It is not a newly invented cipher or a validated real-world fraud detector.
+SAGE-FX is the project's integration of source retrieval, typed model planning and review, exact Decimal tools, synthetic anomaly screening and controlled execution. It uses established algorithms and security primitives. The contribution is the student workflow and bounded authority, without a claim of a new cipher or validated real-world fraud detection.
 
 ## Architecture
 
 | Layer | Implementation |
 |---|---|
-| Interface and application | Python 3.12, Streamlit |
-| Optional hosted language models | Groq, openai/gpt-oss-20b planner and openai/gpt-oss-120b reviewer |
-| Exchange references | Frankfurter v2, daily published observations, no API key |
-| Identity and persistence | Supabase Auth and PostgreSQL RLS/RPCs |
-| Calculation and protection | Decimal, Pydantic, AES-GCM, HMAC-SHA256, synthetic Isolation Forest |
+| Interface | Streamlit, four languages, PDF exports |
+| Interpretation | Optional Groq GPT-OSS 20B planner and 120B reviewer |
+| Private tuition route | Authenticated saved-profile lookup, no LLM call |
+| Financial tools | Python Decimal, currency precision and dated FX validation |
+| Identity and persistence | Supabase Auth, user JWT, PostgreSQL RLS and bounded RPCs |
+| Protection | AES-256-GCM documents, HMAC quotes/audit, roles, limits and atomic replay control |
 
-No Docker, local PostgreSQL or model download is required for this recommended setup. Internet and the team's own service accounts are required. Node.js is only for the optional SQL test suite.
+Model agreement is not independent proof. The model has no ledger-execution tool. The app host and database administrator remain trusted.
 
-## First run on Windows
+## Run on Windows
 
-Install Python 3.12 and open the project folder in VS Code. Then:
+Install Python 3.12, VS Code and Git. A fresh setup requires your own Supabase project and Groq key. Frankfurter needs no API key. No model download, local PostgreSQL or Docker is required.
 
 ```powershell
 py -3.12 -m venv .venv
@@ -47,51 +49,49 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe scripts\setup_local.py
 ```
 
-Complete the Supabase project and Groq prompts. In Supabase SQL Editor run `supabase/schema.sql`, then your generated private `runtime/setup_private.sql`. Disable public signup and create confirmed pilot accounts. Then:
+Complete the wizard, disable public signup, run `supabase/schema.sql` then your generated private `runtime/setup_private.sql`, and provision pilot accounts. Follow the full [deployment guide](docs/submission/DEPLOYMENT.md) for these steps and Community Cloud deployment.
+
+For an already configured PC, start directly:
 
 ```powershell
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1
 ```
 
-For full setup, later runs, account management, deployment and troubleshooting, read [DEPLOYMENT.md](docs/submission/DEPLOYMENT.md) and the existing [DEVELOPER_GUIDE_BN.md](DEVELOPER_GUIDE_BN.md). User operations are in [USER_GUIDE.md](USER_GUIDE.md).
+Keep the same original master key across the PC and deployed app. Routine code updates do not require rerunning setup SQL or recreating accounts.
 
 ## Tests and evidence
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe scripts\doctor.py
-.\.venv\Scripts\python.exe scripts\doctor.py --login
+.\.venv\Scripts\python.exe scripts\evaluate.py --provider offline
 ```
 
-Optional SQL checks:
+| Record | Result and scope |
+|---|---|
+| Latest local corrected-code suite | 227 passed, including UI, financial and security fixtures |
+| Owner offline regression | 366/366 authored synthetic cases, zero LLM calls |
+| Owner Supabase checker | Six actual service checks passed; document isolation, grants, encryption round trip and audit |
+| Owner Groq diagnostic | Four synthetic API/schema checks passed, HTTP 200 |
+| Original SQL suite | 23 historical PGlite checks, real SQL with a stubbed Auth claim |
+| Live acceptance | Owner confirmed login, saved profile, AI, conversion, forecast, PDF and translated UI |
 
-```bash
-npm ci
-npm run test:sql
-```
+Owner results are console reports until the original sanitized files are attached. The offline result is not LLM accuracy. Deployed same-quote replay, reboot persistence, targeted role/limit evidence and measured concurrency remain separate checks. A 15-account enrollment cap is not a 15-concurrent-user benchmark.
 
-The supplied release records 192 passing Python tests, 23 PGlite PostgreSQL checks and 366/366 authored offline regression cases with zero LLM calls. PGlite uses real RLS/pgcrypto with a stubbed Auth claim. These results are not hosted integration, blind generalization or concurrent-load evidence. A dated FX smoke check observed six usable pairs and 165 catalogue entries; current support can change.
+See [testing](docs/submission/TESTING.md), [test cases](docs/submission/TEST_CASES.csv), [evidence status](docs/submission/EVIDENCE_STATUS.md), [technical documentation](docs/submission/TECHNICAL_DOCUMENTATION.md) and the [security self-assessment](docs/submission/SECURITY_SELF_ASSESSMENT.md). The original [developer guide](DEVELOPER_GUIDE_BN.md) and [user guide](USER_GUIDE.md) remain available.
 
-See [TESTING.md](docs/submission/TESTING.md), [TEST_CASES.csv](docs/submission/TEST_CASES.csv) and `evaluation/VERIFICATION.md`. Re-run relevant checks after changing code. Run the two-account hosted checker only on two dedicated blank synthetic accounts; it creates and deletes test documents.
+## Security and publishing
 
-## Security and configuration
+Use the Supabase publishable key and the user's JWT. Never put a service-role key in the app. Keep `.env`, `.streamlit/secrets.toml`, `runtime/`, `.venv/`, databases, keys, private evidence and real student exports out of GitHub. Retain the existing `.gitignore` and review staged changes. Losing the master key can make encrypted documents unreadable.
 
-Keep `.env`, `runtime/`, real credentials, private exports, local databases and virtual environments out of Git. The app uses a publishable Supabase key and each user's JWT. It rejects a privileged service key as an app key. The owner-only account utility requests administrative credentials privately outside the app runtime.
-
-Preserve the same generated master key across PC and deployment. Losing or changing it can make stored documents unreadable. The database administrator and app host remain trusted. Public signup must stay disabled for this pilot. The 15-account limit is an enrollment cap, not measured simultaneous AI capacity.
-
-Read [SECURITY_SELF_ASSESSMENT.md](docs/submission/SECURITY_SELF_ASSESSMENT.md) for permission tiers, known risks and pending hosted checks.
-
-## Deployment and public link
-
-Deploy `app.py` on Streamlit Community Cloud using the sanitized GitHub repository, Python 3.12 and the generated cloud secrets. Saved profiles reside in Supabase rather than the hosting container's local disk. Follow [DEPLOYMENT.md](docs/submission/DEPLOYMENT.md), verify persistence and replace the live-link field above. Add the same real URL to GitHub **About → Website**.
+Public signup stays disabled. Only the owner assigns roles. The quote suffix is explicit confirmation, not MFA. No independent audit, regulatory approval or production payment readiness is claimed.
 
 ## Team
 
-- **Leader:** Md. Sorowar Mahabub Rabby, MSc Research Mode (pursuing), Faculty of Engineering & Built Environment, Universiti Kebangsaan Malaysia. Email: sorowar.cse1@gmail.com.
-- **Member 2:**  Dr. Hasniza bt Hambali, PhD (Year 3), Faculty: Faculty of Engineering & Built Environment (FKAB), University: Universiti Kebangsaan Malaysia (UKM).
+- **Leader:** Md. Sorowar Mahabub Rabby, Master of Science in Research Mode, pursuing, Faculty of Engineering & Built Environment, Universiti Kebangsaan Malaysia. Email: sorowar.cse1@gmail.com.
+- **Member:** Dr. Hasniza bt Hambali, PhD, Year 3, Faculty of Engineering & Built Environment, Universiti Kebangsaan Malaysia. Email: p145746@siswa.ukm.edu.my.
 
 
 ## License and acknowledgments
 
-Keep the repository's existing `LICENSE`, `THIRD_PARTY_NOTICES.md` and font license. Acknowledge Groq, Frankfurter, Supabase and upstream open-source components. The submission documents describe this implementation and its measured scope; they do not certify regulatory or production readiness.
+Retain `LICENSE`, `THIRD_PARTY_NOTICES.md` and the included font license. Acknowledge Groq, Frankfurter, Supabase and the upstream open-source libraries. See the [competition announcement](https://ird.oou.cmu.ac.th/2026-shenzhen-international-fintech-competition/) for the official topic and submission rules.
